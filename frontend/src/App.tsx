@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,8 +6,6 @@ import {
   Navigate,
 } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
-import { useAuthStore } from './store/authStore';
-import api from './services/api';
 import { ToastProvider } from './providers/ToastProvider';
 
 // Lazy load pages
@@ -23,19 +21,6 @@ const Profile = lazy(() => import('./pages/Profile'));
 const Search = lazy(() => import('./pages/Search'));
 
 function App() {
-  const { token, _hasHydrated } = useAuthStore();
-
-  // Sincronizar token com axios quando mudar
-  useEffect(() => {
-    if (_hasHydrated) {
-      if (token) {
-        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      } else {
-        delete api.defaults.headers.common['Authorization'];
-      }
-    }
-  }, [token, _hasHydrated]);
-
   return (
     <Router>
       <ToastProvider>

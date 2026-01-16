@@ -1,8 +1,22 @@
 import axios from 'axios';
 import { useAuthStore } from '../store/authStore';
 
+// Configurar baseURL removendo /api duplicado se necessário
+const getBaseURL = () => {
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  // Se a URL já termina com /api, remove para evitar duplicação
+  if (apiUrl.endsWith('/api')) {
+    return apiUrl;
+  }
+  if (apiUrl.endsWith('/api/')) {
+    return apiUrl.slice(0, -1); // Remove a barra final
+  }
+  // Se não termina com /api, adiciona
+  return `${apiUrl}/api`;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000/api',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
   },
@@ -10,14 +24,22 @@ const api = axios.create({
 });
 
 // Request interceptor to add token
-api.interceptors.request.use((config) => {
-  // Usar o store diretamente para obter o token atualizado
-  const token = useAuthStore.getState().token;
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
+api.interceptors.request.use(
+  (config) => {
+    // Usar o store diretamente para obter o token atualizado
+    const token = useAuthStore.getState().token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    } else {
+      // Garantir que o header seja removido se não houver token
+      delete config.headers.Authorization;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
 
 // Response interceptor to handle errors
 api.interceptors.response.use(
