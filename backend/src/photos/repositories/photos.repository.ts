@@ -32,6 +32,7 @@ export abstract class PhotosRepository {
   abstract findOne(id: string): Promise<Photo | null>;
   abstract update(id: string, updatePhotoDto: UpdatePhotoDto): Promise<Photo>;
   abstract delete(id: string): Promise<void>;
+  abstract deleteMany(ids: string[]): Promise<void>;
   abstract search(
     userId: string,
     query: string,

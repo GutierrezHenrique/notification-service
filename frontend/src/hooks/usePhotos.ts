@@ -5,6 +5,7 @@ import { searchPhotos } from '../api/get/search-photos';
 import { postCreatePhoto } from '../api/post/post-create-photo';
 import { patchUpdatePhoto } from '../api/patch/patch-update-photo';
 import { deletePhoto } from '../api/delete/delete-photo';
+import { deletePhotos } from '../api/delete/delete-photos';
 
 interface CreatePhotoData {
   title: string;
@@ -77,6 +78,21 @@ export const useDeletePhoto = (albumId: string) => {
 
   return useMutation({
     mutationFn: (id: string) => deletePhoto(albumId, id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ['albums', albumId, 'photos'],
+      });
+      queryClient.invalidateQueries({ queryKey: ['albums', albumId] });
+      queryClient.invalidateQueries({ queryKey: ['albums'] });
+    },
+  });
+};
+
+export const useDeletePhotos = (albumId: string) => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (ids: string[]) => deletePhotos(albumId, ids),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ['albums', albumId, 'photos'],
