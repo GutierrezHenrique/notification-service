@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import api from '../services/api';
 
 interface User {
   id: string;
@@ -14,8 +13,10 @@ interface AuthState {
   user: User | null;
   token: string | null;
   isAuthenticated: boolean;
+  _hasHydrated: boolean;
   logout: () => void;
   setAuth: (user: User, token: string) => void;
+  setHasHydrated: (state: boolean) => void;
 }
 
 interface AuthStatePartial {
@@ -30,13 +31,13 @@ export const useAuthStore = create<AuthState>()(
       user: null,
       token: null,
       isAuthenticated: false,
+      _hasHydrated: false,
       logout: () => {
         set({
           user: null,
           token: null,
           isAuthenticated: false,
         });
-        delete api.defaults.headers.common['Authorization'];
       },
       setAuth: (user: User, token: string) => {
         set({
@@ -44,21 +45,25 @@ export const useAuthStore = create<AuthState>()(
           token,
           isAuthenticated: true,
         });
-        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      },
+      setHasHydrated: (state: boolean) => {
+        set({
+          _hasHydrated: state,
+        });
       },
     }),
     {
       name: 'auth-storage',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state): AuthStatePartial => ({
+      partialize: (state) => ({
         user: state.user,
         token: state.token,
         isAuthenticated: state.isAuthenticated,
       }),
-      onRehydrateStorage: () => (state: AuthStatePartial | undefined) => {
-        if (state?.token) {
-          api.defaults.headers.common['Authorization'] =
-            `Bearer ${state.token}`;
+      onRehydrateStorage: () => (state) => {
+        // Marcar como hidratado após reidratação
+        if (state) {
+          state.setHasHydrated(true);
         }
       },
     },

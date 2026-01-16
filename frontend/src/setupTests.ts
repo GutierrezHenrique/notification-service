@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 
 // Mock do import.meta.env para Vite
-if (typeof (globalThis as any).import === 'undefined') {
+if (typeof (globalThis as Record<string, unknown>).import === 'undefined') {
   Object.defineProperty(globalThis, 'import', {
     value: {
       meta: {
@@ -30,7 +30,8 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 // Mock do IntersectionObserver
-(globalThis as any).IntersectionObserver = class IntersectionObserver {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(global as any).IntersectionObserver = class IntersectionObserver {
   constructor() {}
   disconnect() {}
   observe() {}

@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useRegister } from '../hooks/useAuth';
 import { getErrorMessage } from '../types/api';
 import { Input, Button } from '../components/ui';
 import { useToast } from '../providers/ToastProvider';
 import { useEffect } from 'react';
+import { useAuthStore } from '../store/authStore';
 
 interface RegisterForm {
   name: string;
@@ -24,6 +25,12 @@ const Register = () => {
   const password = watch('password');
   const registerMutation = useRegister();
   const { addToast } = useToast();
+  const { isAuthenticated, _hasHydrated } = useAuthStore();
+
+  // Redirecionar se já estiver autenticado
+  if (_hasHydrated && isAuthenticated) {
+    return <Navigate to="/albums" replace />;
+  }
 
   const onSubmit = (data: RegisterForm) => {
     registerMutation.mutate({

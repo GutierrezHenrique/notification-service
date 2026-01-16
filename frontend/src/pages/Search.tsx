@@ -19,7 +19,7 @@ import {
 type ViewMode = 'thumbnails' | 'table';
 
 const Search = () => {
-  const [searchParams] = useSearchParams();
+  const searchParams = useSearchParams()[0];
   const navigate = useNavigate();
   const { user, logout } = useAuthStore();
   const query = searchParams.get('q') || '';
