@@ -11,6 +11,7 @@ import { CreateUserDto } from '../users/dto/create-user.dto';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { UserWithoutPassword } from './types/user-without-password.interface';
+import { UsersService } from '../users/users.service';
 
 @Injectable()
 export class AuthService {
@@ -22,6 +23,7 @@ export class AuthService {
     private readonly forgotPasswordUseCase: ForgotPasswordUseCase,
     private readonly resetPasswordUseCase: ResetPasswordUseCase,
     private readonly jwtService: JwtService,
+    private readonly usersService: UsersService,
   ) {}
 
   async validateUser(
@@ -41,10 +43,22 @@ export class AuthService {
 
   async validateToken(
     token: string,
-  ): Promise<{ valid: boolean; userId?: string; email?: string }> {
+  ): Promise<{ valid: boolean; user?: UserWithoutPassword }> {
     try {
       const decoded = this.jwtService.verify(token);
-      return { valid: true, userId: decoded.sub, email: decoded.email };
+      const user = await this.usersService.findOneById(decoded.sub);
+      
+      if (!user) {
+        return { valid: false };
+      }
+
+      // Remove password from user object
+      const { password: _password, ...userWithoutPassword } = user;
+      
+      return {
+        valid: true,
+        user: userWithoutPassword as UserWithoutPassword,
+      };
     } catch (error) {
       return { valid: false };
     }

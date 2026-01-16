@@ -29,7 +29,9 @@ api.interceptors.request.use(
     // Usar o store diretamente para obter o token atualizado
     const token = useAuthStore.getState().token;
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      // Garantir que o token não tenha "Bearer " duplicado
+      const cleanToken = token.startsWith('Bearer ') ? token.slice(7) : token;
+      config.headers.Authorization = `Bearer ${cleanToken}`;
     } else {
       // Garantir que o header seja removido se não houver token
       delete config.headers.Authorization;

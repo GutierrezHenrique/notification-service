@@ -46,7 +46,6 @@ export class JwtAuthGuard implements CanActivate {
           { token },
           {
             headers: {
-              Authorization: authHeader,
               'Content-Type': 'application/json',
             },
             timeout: 5000,
@@ -54,8 +53,13 @@ export class JwtAuthGuard implements CanActivate {
         ),
       );
 
+      // Check if token is valid
+      if (!response.data?.valid || !response.data?.user) {
+        throw new UnauthorizedException('Invalid or expired token');
+      }
+
       // Attach user info to request
-      request.user = response.data.user || response.data;
+      request.user = response.data.user;
       return true;
     } catch (error: any) {
       // Log do erro para debug
