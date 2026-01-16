@@ -32,7 +32,7 @@ describe('useLogin', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     queryClient.clear();
-    (useAuthStore as jest.Mock).mockReturnValue({
+    (useAuthStore as unknown as jest.Mock).mockReturnValue({
       setAuth: jest.fn(),
     });
   });
@@ -61,7 +61,7 @@ describe('useRegister', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     queryClient.clear();
-    (useAuthStore as jest.Mock).mockReturnValue({
+    (useAuthStore as unknown as jest.Mock).mockReturnValue({
       setAuth: jest.fn(),
     });
   });

@@ -24,12 +24,10 @@ export class EmailService {
     resetToken: string,
   ): Promise<void> {
     const frontendUrl =
-      this.configService.get<string>('FRONTEND_URL') ||
-      'http://localhost:5173';
+      this.configService.get<string>('FRONTEND_URL') || 'http://localhost:5173';
     const resetUrl = `${frontendUrl}/reset-password?token=${resetToken}`;
     const fromEmail =
-      this.configService.get<string>('SMTP_FROM') ||
-      'noreply@mygallery.com';
+      this.configService.get<string>('SMTP_FROM') || 'noreply@mygallery.com';
     const fromName =
       this.configService.get<string>('SMTP_FROM_NAME') || 'MyGallery';
 

@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 interface DropzoneProps {
-  onFileSelected: (file: File | File[]) => void;
+  onFileSelected: (file: File | File[] | null) => void;
   accept?: Record<string, string[]>;
   maxFiles?: number;
   multiple?: boolean;
@@ -75,7 +75,7 @@ export const Dropzone = ({
                     if (multiple || maxFiles > 1) {
                       onFileSelected(newFiles);
                     } else {
-                      onFileSelected(newFiles[0] || null);
+                      onFileSelected(newFiles[0] || ([] as File[]));
                     }
                   }}
                   className="ml-2 text-sm text-red-600 hover:text-red-800"
@@ -93,7 +93,7 @@ export const Dropzone = ({
               if (multiple || maxFiles > 1) {
                 onFileSelected([]);
               } else {
-                onFileSelected(null);
+                onFileSelected([] as File[]);
               }
             }}
             className="mt-2 text-sm text-red-600 hover:text-red-800"

@@ -54,15 +54,30 @@ export class PrismaUsersRepository implements UsersRepository {
       ...(data.password !== undefined && { password: data.password }),
       ...(data.provider !== undefined && { provider: data.provider }),
       ...(data.googleId !== undefined && { googleId: data.googleId }),
-      ...(data.profilePicture !== undefined && { profilePicture: data.profilePicture }),
-      ...(data.passwordResetToken !== undefined && { passwordResetToken: data.passwordResetToken }),
-      ...(data.passwordResetExpires !== undefined && { passwordResetExpires: data.passwordResetExpires }),
-      ...(data.emailVerificationToken !== undefined && { emailVerificationToken: data.emailVerificationToken }),
-      ...(data.emailVerified !== undefined && { emailVerified: data.emailVerified }),
+      ...(data.profilePicture !== undefined && {
+        profilePicture: data.profilePicture,
+      }),
+      ...(data.passwordResetToken !== undefined && {
+        passwordResetToken: data.passwordResetToken,
+      }),
+      ...(data.passwordResetExpires !== undefined && {
+        passwordResetExpires: data.passwordResetExpires,
+      }),
+      ...(data.emailVerificationToken !== undefined && {
+        emailVerificationToken: data.emailVerificationToken,
+      }),
+      ...(data.emailVerified !== undefined && {
+        emailVerified: data.emailVerified,
+      }),
     };
 
     // Só permitir alteração de email se o usuário não for OAuth
-    if (data.email && currentUser && currentUser.provider !== 'google' && !currentUser.googleId) {
+    if (
+      data.email &&
+      currentUser &&
+      currentUser.provider !== 'google' &&
+      !currentUser.googleId
+    ) {
       updateData.email = data.email;
     }
 

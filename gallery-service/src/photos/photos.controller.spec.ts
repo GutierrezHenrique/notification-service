@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PhotosController } from './photos.controller';
 import { PhotosService } from './photos.service';
 import { ConfigService } from '@nestjs/config';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../security/guards/jwt-auth.guard';
 import { StorageRepository } from '../storage/repositories/storage.repository';
 import { mockPhoto } from '../../test/fixtures/photo.fixture';
 

@@ -92,9 +92,11 @@ export class AlbumsController {
 
   @Get('shared/:shareToken')
   @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 requests per minute for shared albums
-  async getShared(@Param('shareToken') shareToken: string): Promise<AlbumViewModel> {
+  async getShared(
+    @Param('shareToken') shareToken: string,
+  ): Promise<AlbumViewModel> {
     const album = await this.albumsService.getShared(shareToken);
-    
+
     // Get URLs for photos
     const photosWithUrls = await Promise.all(
       (album.photos || []).map(async (photo) => {
@@ -162,7 +164,11 @@ export class AlbumsController {
     @Param('id') id: string,
     @Body() body: { isPublic: boolean },
   ): Promise<AlbumViewModel> {
-    const album = await this.albumsService.share(id, req.user.id, body.isPublic);
+    const album = await this.albumsService.share(
+      id,
+      req.user.id,
+      body.isPublic,
+    );
     return new AlbumViewModel({
       id: album.id,
       title: album.title,

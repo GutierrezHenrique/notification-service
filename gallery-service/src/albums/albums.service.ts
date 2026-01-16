@@ -46,7 +46,11 @@ export class AlbumsService {
     return this.deleteAlbumUseCase.execute(id, userId);
   }
 
-  async share(albumId: string, userId: string, isPublic: boolean): Promise<Album> {
+  async share(
+    albumId: string,
+    userId: string,
+    isPublic: boolean,
+  ): Promise<Album> {
     return this.shareAlbumUseCase.execute(albumId, userId, isPublic);
   }
 

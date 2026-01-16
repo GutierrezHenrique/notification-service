@@ -19,10 +19,6 @@ import { PrismaPhotosRepository } from './repositories/prisma-photos.repository'
       useClass: PrismaPhotosRepository,
     },
   ],
-  exports: [
-    AlbumsRepository,
-    PhotosRepository,
-    PrismaService,
-  ],
+  exports: [AlbumsRepository, PhotosRepository, PrismaService],
 })
 export class DatabaseModule {}

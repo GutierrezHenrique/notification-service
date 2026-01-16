@@ -1,7 +1,6 @@
 import {
   PipeTransform,
   Injectable,
-  ArgumentMetadata,
   PayloadTooLargeException,
 } from '@nestjs/common';
 import { validatePayloadSize } from '../utils/validation.util';
@@ -15,7 +14,7 @@ export class PayloadSizePipe implements PipeTransform {
     this.maxSizeBytes = maxSizeBytes;
   }
 
-  transform(value: any, metadata: ArgumentMetadata) {
+  transform(value: any) {
     if (!validatePayloadSize(value, this.maxSizeBytes)) {
       throw new PayloadTooLargeException(
         `Payload size exceeds maximum of ${this.maxSizeBytes} bytes`,

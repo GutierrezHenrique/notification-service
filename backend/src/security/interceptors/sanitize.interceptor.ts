@@ -13,7 +13,7 @@ import { validatePayloadSize } from '../utils/validation.util';
 export class SanitizeInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const request = context.switchToHttp().getRequest();
-    
+
     // Validate request payload size (10MB max)
     if (request.body && !validatePayloadSize(request.body, 10 * 1024 * 1024)) {
       throw new PayloadTooLargeException('Request payload too large');

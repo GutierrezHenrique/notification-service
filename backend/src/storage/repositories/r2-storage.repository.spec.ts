@@ -63,7 +63,9 @@ describe('R2StorageRepository', () => {
 
       const s3Client = repository['s3Client'] as any;
       s3Client.send = jest.fn().mockResolvedValue({});
-      (getSignedUrl as jest.Mock).mockResolvedValue('https://example.com/signed-url.jpg');
+      (getSignedUrl as jest.Mock).mockResolvedValue(
+        'https://example.com/signed-url.jpg',
+      );
 
       const result = await repository.uploadFile(file, 'photos');
 
@@ -90,7 +92,9 @@ describe('R2StorageRepository', () => {
   describe('getFileUrl', () => {
     it('should return presigned URL for a file', async () => {
       const key = 'photos/test-file.jpg';
-      (getSignedUrl as jest.Mock).mockResolvedValue('https://example.com/signed-url.jpg');
+      (getSignedUrl as jest.Mock).mockResolvedValue(
+        'https://example.com/signed-url.jpg',
+      );
 
       const url = await repository.getFileUrl(key);
 

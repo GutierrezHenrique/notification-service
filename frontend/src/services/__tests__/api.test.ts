@@ -1,5 +1,9 @@
+// Declare require for jest mocks
+declare const require: (id: string) => any;
+
 // Mock api module before importing
 jest.mock('../api', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const axios = require('axios');
   return axios.create({
     baseURL: 'http://localhost:3000',

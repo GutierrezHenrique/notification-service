@@ -41,7 +41,13 @@ export class PhotosService {
     page: number = 1,
     limit: number = 50,
   ): Promise<{ photos: Photo[]; total: number; page: number; limit: number }> {
-    return this.listPhotosUseCase.execute(albumId, userId, orderBy, page, limit);
+    return this.listPhotosUseCase.execute(
+      albumId,
+      userId,
+      orderBy,
+      page,
+      limit,
+    );
   }
 
   async findOne(id: string, userId: string): Promise<Photo> {
@@ -67,6 +73,12 @@ export class PhotosService {
     page: number = 1,
     limit: number = 50,
   ): Promise<{ photos: Photo[]; total: number; page: number; limit: number }> {
-    return this.searchPhotosUseCase.execute(userId, query, orderBy, page, limit);
+    return this.searchPhotosUseCase.execute(
+      userId,
+      query,
+      orderBy,
+      page,
+      limit,
+    );
   }
 }

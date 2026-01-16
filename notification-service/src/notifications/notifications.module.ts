@@ -8,11 +8,7 @@ import { DatabaseModule } from '../database/database.module';
 @Module({
   imports: [DatabaseModule],
   controllers: [NotificationsController],
-  providers: [
-    NotificationsService,
-    PushNotificationService,
-    FcmTokenService,
-  ],
+  providers: [NotificationsService, PushNotificationService, FcmTokenService],
   exports: [NotificationsService, PushNotificationService, FcmTokenService],
 })
 export class NotificationsModule {}

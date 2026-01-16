@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Dropzone } from '../Dropzone';
 
 // Mock react-dropzone
 jest.mock('react-dropzone', () => ({
-  useDropzone: jest.fn(({ onDrop, accept, maxFiles }) => ({
+  useDropzone: jest.fn(({ accept, maxFiles }) => ({
     getRootProps: () => ({
       onClick: jest.fn(),
       onKeyDown: jest.fn(),

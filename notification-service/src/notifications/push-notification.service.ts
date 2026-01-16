@@ -13,10 +13,14 @@ export class PushNotificationService {
 
   private initializeFirebase() {
     try {
-      const serviceAccount = this.configService.get<string>('FIREBASE_SERVICE_ACCOUNT');
-      
+      const serviceAccount = this.configService.get<string>(
+        'FIREBASE_SERVICE_ACCOUNT',
+      );
+
       if (!serviceAccount) {
-        this.logger.warn('FIREBASE_SERVICE_ACCOUNT not configured. Push notifications will be disabled.');
+        this.logger.warn(
+          'FIREBASE_SERVICE_ACCOUNT not configured. Push notifications will be disabled.',
+        );
         return;
       }
 
@@ -42,7 +46,9 @@ export class PushNotificationService {
     data?: Record<string, any>,
   ): Promise<boolean> {
     if (!this.firebaseApp) {
-      this.logger.warn('Firebase not initialized. Cannot send push notification.');
+      this.logger.warn(
+        'Firebase not initialized. Cannot send push notification.',
+      );
       return false;
     }
 
@@ -68,15 +74,20 @@ export class PushNotificationService {
       this.logger.log(`Push notification sent successfully: ${response}`);
       return true;
     } catch (error: any) {
-      this.logger.error(`Failed to send push notification: ${error.message}`, error.stack);
-      
+      this.logger.error(
+        `Failed to send push notification: ${error.message}`,
+        error.stack,
+      );
+
       // Se o token é inválido, pode ser removido
-      if (error.code === 'messaging/invalid-registration-token' || 
-          error.code === 'messaging/registration-token-not-registered') {
+      if (
+        error.code === 'messaging/invalid-registration-token' ||
+        error.code === 'messaging/registration-token-not-registered'
+      ) {
         this.logger.warn(`Invalid FCM token: ${fcmToken}`);
         return false;
       }
-      
+
       return false;
     }
   }
@@ -110,7 +121,7 @@ export class PushNotificationService {
       }));
 
       const response = await admin.messaging().sendEach(messages);
-      
+
       this.logger.log(
         `Sent ${response.successCount} push notifications, ${response.failureCount} failed`,
       );
@@ -120,12 +131,17 @@ export class PushNotificationService {
         failureCount: response.failureCount,
       };
     } catch (error: any) {
-      this.logger.error(`Failed to send push notifications: ${error.message}`, error.stack);
+      this.logger.error(
+        `Failed to send push notifications: ${error.message}`,
+        error.stack,
+      );
       return { successCount: 0, failureCount: fcmTokens.length };
     }
   }
 
-  private convertDataToString(data: Record<string, any>): Record<string, string> {
+  private convertDataToString(
+    data: Record<string, any>,
+  ): Record<string, string> {
     const result: Record<string, string> = {};
     for (const [key, value] of Object.entries(data)) {
       result[key] = typeof value === 'string' ? value : JSON.stringify(value);

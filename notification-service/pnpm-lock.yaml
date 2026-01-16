@@ -50,6 +50,9 @@ importers:
       compression:
         specifier: ^1.8.1
         version: 1.8.1
+      express:
+        specifier: ^4.22.1
+        version: 4.22.1
       firebase-admin:
         specifier: ^12.7.0
         version: 12.7.0

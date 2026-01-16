@@ -93,7 +93,10 @@ describe('CreatePhotoUseCase', () => {
     expect(getAlbumUseCase.execute).toHaveBeenCalledWith(albumId, userId);
     expect(storageRepository.uploadFile).toHaveBeenCalled();
     expect(photosRepository.create).toHaveBeenCalled();
-    expect(result).toEqual({ ...mockPhoto, url: 'https://example.com/file.jpg' });
+    expect(result).toEqual({
+      ...mockPhoto,
+      url: 'https://example.com/file.jpg',
+    });
   });
 
   it('should throw BadRequestException for invalid file type', async () => {

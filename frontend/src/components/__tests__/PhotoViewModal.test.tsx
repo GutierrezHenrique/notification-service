@@ -11,6 +11,7 @@ const mockPhoto: Photo = {
   size: 1024,
   acquisitionDate: '2024-01-01T10:00:00Z',
   dominantColor: '#FF0000',
+  albumId: 'album-1',
   createdAt: '2024-01-01',
 };
 

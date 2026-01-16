@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AlbumsController } from './albums.controller';
 import { AlbumsService } from './albums.service';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../security/guards/jwt-auth.guard';
 import { StorageRepository } from '../storage/repositories/storage.repository';
 import { mockAlbum } from '../../test/fixtures/album.fixture';
 

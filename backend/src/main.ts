@@ -4,6 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { AppModule } from './app.module';
 import helmet from 'helmet';
 import * as compression from 'compression';
+import * as express from 'express';
 import { SanitizeInterceptor } from './security/interceptors/sanitize.interceptor';
 
 async function bootstrap() {
@@ -84,8 +85,8 @@ async function bootstrap() {
 
   // Body parser size limit (10MB for file uploads)
   // Note: File uploads are handled by multer, not body parser
-  app.use(require('express').json({ limit: '1mb' })); // JSON payloads limited to 1MB
-  app.use(require('express').urlencoded({ extended: true, limit: '1mb' }));
+  app.use(express.json({ limit: '1mb' })); // JSON payloads limited to 1MB
+  app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 
   // Global interceptors
   app.useGlobalInterceptors(new SanitizeInterceptor());

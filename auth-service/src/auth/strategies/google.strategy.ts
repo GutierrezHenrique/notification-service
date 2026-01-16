@@ -14,15 +14,30 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   ) {
     // O callback URL deve apontar para o API Gateway (porta 3000)
     // O middleware do gateway redireciona para o auth-service
-    const apiGatewayUrl = configService.get<string>('API_GATEWAY_URL') || 'http://localhost:3000';
-    const callbackURL = configService.get<string>('GOOGLE_CALLBACK_URL') || `${apiGatewayUrl}/auth/google/callback`;
-    
+    const apiGatewayUrl =
+      configService.get<string>('API_GATEWAY_URL') || 'http://localhost:3000';
+    const callbackURL =
+      configService.get<string>('GOOGLE_CALLBACK_URL') ||
+      `${apiGatewayUrl}/auth/google/callback`;
+
     console.log('🔐 Google OAuth Config:');
-    console.log('  - Client ID:', configService.get<string>('GOOGLE_CLIENT_ID') ? '✓ Configurado' : '✗ Não configurado');
-    console.log('  - Client Secret:', configService.get<string>('GOOGLE_CLIENT_SECRET') ? '✓ Configurado' : '✗ Não configurado');
+    console.log(
+      '  - Client ID:',
+      configService.get<string>('GOOGLE_CLIENT_ID')
+        ? '✓ Configurado'
+        : '✗ Não configurado',
+    );
+    console.log(
+      '  - Client Secret:',
+      configService.get<string>('GOOGLE_CLIENT_SECRET')
+        ? '✓ Configurado'
+        : '✗ Não configurado',
+    );
     console.log('  - Callback URL:', callbackURL);
-    console.log('  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!');
-    
+    console.log(
+      '  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!',
+    );
+
     super({
       clientID: configService.get<string>('GOOGLE_CLIENT_ID'),
       clientSecret: configService.get<string>('GOOGLE_CLIENT_SECRET'),

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Delete, Body, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Request } from '@nestjs/common';
 import { NotificationsService } from './notifications.service';
 import { FcmTokenService } from './fcm-token.service';
 import { PushNotificationService } from './push-notification.service';

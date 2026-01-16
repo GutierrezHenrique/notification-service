@@ -5,13 +5,11 @@ import {
   usePhotos,
   usePhoto,
   useCreatePhoto,
-  useUpdatePhoto,
   useDeletePhoto,
 } from '../usePhotos';
 import * as photosApi from '../../api/get/get-photos';
 import * as photoApi from '../../api/get/get-photo';
 import * as createPhotoApi from '../../api/post/post-create-photo';
-import * as updatePhotoApi from '../../api/patch/patch-update-photo';
 import * as deletePhotoApi from '../../api/delete/delete-photo';
 
 jest.mock('../../api/get/get-photos');

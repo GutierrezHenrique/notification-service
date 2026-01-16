@@ -66,9 +66,9 @@ export const UserMenu = () => {
         aria-label="Menu do usuário"
         aria-expanded={isOpen}
       >
-        {user?.profilePicture || authUser?.profilePicture ? (
+        {(user?.profilePicture || authUser?.profilePicture) ? (
           <img
-            src={user?.profilePicture || authUser?.profilePicture}
+            src={(user?.profilePicture || authUser?.profilePicture) || ''}
             alt={displayName}
             className="w-8 h-8 rounded-full object-cover shadow-sm border-2 border-white"
           />
@@ -100,9 +100,9 @@ export const UserMenu = () => {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50 transform transition-all duration-200 ease-out opacity-100 scale-100">
           <div className="px-4 py-3 border-b border-gray-200 flex items-center gap-3">
-            {user?.profilePicture || authUser?.profilePicture ? (
+            {(user?.profilePicture || authUser?.profilePicture) ? (
               <img
-                src={user?.profilePicture || authUser?.profilePicture}
+                src={(user?.profilePicture || authUser?.profilePicture) || ''}
                 alt={displayName}
                 className="w-10 h-10 rounded-full object-cover border-2 border-gray-200"
               />

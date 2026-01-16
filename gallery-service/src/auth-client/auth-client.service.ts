@@ -16,13 +16,14 @@ export class AuthClientService {
       'http://localhost:3001';
   }
 
-  async validateToken(token: string): Promise<{ userId: string; email: string }> {
+  async validateToken(
+    token: string,
+  ): Promise<{ userId: string; email: string }> {
     try {
       const response = await firstValueFrom(
-        this.httpService.post(
-          `${this.authServiceUrl}/auth/validate`,
-          { token },
-        ),
+        this.httpService.post(`${this.authServiceUrl}/auth/validate`, {
+          token,
+        }),
       );
 
       if (response.data.valid) {

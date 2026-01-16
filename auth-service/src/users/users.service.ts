@@ -1,4 +1,9 @@
-import { Injectable, ConflictException, BadRequestException, UnauthorizedException } from '@nestjs/common';
+import {
+  Injectable,
+  ConflictException,
+  BadRequestException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { User } from '../domain/entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
@@ -33,19 +38,23 @@ export class UsersService {
     // Verificar se o usuário está tentando alterar o email
     if (data.email !== undefined) {
       const user = await this.usersRepository.findOneById(id);
-      
+
       if (!user) {
         throw new UnauthorizedException('User not found');
       }
 
       // Verificar se o usuário fez login via OAuth
       if (user.provider === 'google' || user.googleId) {
-        throw new BadRequestException('Usuários que fizeram login com provedor OAuth não podem alterar o email');
+        throw new BadRequestException(
+          'Usuários que fizeram login com provedor OAuth não podem alterar o email',
+        );
       }
 
       // Verificar se o email já está em uso por outro usuário
       if (data.email !== user.email) {
-        const existingUser = await this.usersRepository.findOneByEmail(data.email);
+        const existingUser = await this.usersRepository.findOneByEmail(
+          data.email,
+        );
         if (existingUser && existingUser.id !== id) {
           throw new ConflictException('Email already registered');
         }
@@ -63,20 +72,27 @@ export class UsersService {
     return this.usersRepository.findOneByPasswordResetToken(token);
   }
 
-  async changePassword(userId: string, changePasswordDto: ChangePasswordDto): Promise<void> {
+  async changePassword(
+    userId: string,
+    changePasswordDto: ChangePasswordDto,
+  ): Promise<void> {
     const user = await this.usersRepository.findOneById(userId);
-    
+
     if (!user) {
       throw new UnauthorizedException('User not found');
     }
 
     // Verificar se o usuário fez login via OAuth (não tem senha)
     if (user.provider === 'google' || !user.password) {
-      throw new BadRequestException('Usuários que fizeram login com Google não podem alterar a senha');
+      throw new BadRequestException(
+        'Usuários que fizeram login com Google não podem alterar a senha',
+      );
     }
 
     // Verificar se a senha atual está correta
-    if (!(await bcrypt.compare(changePasswordDto.currentPassword, user.password))) {
+    if (
+      !(await bcrypt.compare(changePasswordDto.currentPassword, user.password))
+    ) {
       throw new UnauthorizedException('Senha atual incorreta');
     }
 
@@ -91,7 +107,7 @@ export class UsersService {
 
   async delete(id: string): Promise<void> {
     const user = await this.usersRepository.findOneById(id);
-    
+
     if (!user) {
       throw new UnauthorizedException('User not found');
     }

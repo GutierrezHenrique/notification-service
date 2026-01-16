@@ -39,7 +39,9 @@ export class AuthService {
     return this.registerUseCase.execute(createUserDto);
   }
 
-  async validateToken(token: string): Promise<{ valid: boolean; userId?: string; email?: string }> {
+  async validateToken(
+    token: string,
+  ): Promise<{ valid: boolean; userId?: string; email?: string }> {
     try {
       const decoded = this.jwtService.verify(token);
       return { valid: true, userId: decoded.sub, email: decoded.email };

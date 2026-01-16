@@ -61,7 +61,12 @@ describe('ListPhotosUseCase', () => {
     const result = await useCase.execute(albumId, userId);
 
     expect(getAlbumUseCase.execute).toHaveBeenCalledWith(albumId, userId);
-    expect(photosRepository.findAll).toHaveBeenCalledWith(albumId, 'desc', 1, 50);
+    expect(photosRepository.findAll).toHaveBeenCalledWith(
+      albumId,
+      'desc',
+      1,
+      50,
+    );
     expect(result.photos).toEqual(mockPhotos);
     expect(result.total).toBe(mockPhotos.length);
   });

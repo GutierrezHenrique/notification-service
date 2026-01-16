@@ -19,7 +19,7 @@ import {
 type ViewMode = 'thumbnails' | 'table';
 
 const Search = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { user, logout } = useAuthStore();
   const query = searchParams.get('q') || '';
@@ -150,7 +150,7 @@ const Search = () => {
           </div>
           <div className="flex items-center gap-2">
             <Button
-              variant={viewMode === 'thumbnails' ? 'default' : 'outline'}
+              variant={viewMode === 'thumbnails' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setViewMode('thumbnails')}
             >
@@ -160,7 +160,7 @@ const Search = () => {
               Miniaturas
             </Button>
             <Button
-              variant={viewMode === 'table' ? 'default' : 'outline'}
+              variant={viewMode === 'table' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setViewMode('table')}
             >
@@ -327,7 +327,6 @@ const Search = () => {
         {selectedPhoto && (
           <PhotoViewModal
             photo={selectedPhoto}
-            albumId={selectedPhoto.albumId}
             onClose={() => setSelectedPhoto(null)}
           />
         )}

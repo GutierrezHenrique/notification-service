@@ -23,7 +23,9 @@ export class SearchPhotosUseCase {
     }
 
     if (query.trim().length < 2) {
-      throw new BadRequestException('Search query must be at least 2 characters');
+      throw new BadRequestException(
+        'Search query must be at least 2 characters',
+      );
     }
 
     // Validate pagination parameters
@@ -37,6 +39,12 @@ export class SearchPhotosUseCase {
       throw new BadRequestException('OrderBy must be "asc" or "desc"');
     }
 
-    return this.photosRepository.search(userId, query.trim(), orderBy, page, limit);
+    return this.photosRepository.search(
+      userId,
+      query.trim(),
+      orderBy,
+      page,
+      limit,
+    );
   }
 }

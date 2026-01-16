@@ -4,17 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { postLogin } from '../api/post/post-login';
 import { postRegister } from '../api/post/post-register';
 
-interface LoginData {
-  email: string;
-  password: string;
-}
-
-interface RegisterData {
-  name: string;
-  email: string;
-  password: string;
-}
-
 export const useLogin = () => {
   const { setAuth } = useAuthStore();
   const navigate = useNavigate();

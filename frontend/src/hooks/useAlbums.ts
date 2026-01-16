@@ -6,12 +6,6 @@ import { postCreateAlbum } from '../api/post/post-create-album';
 import { patchUpdateAlbum } from '../api/patch/patch-update-album';
 import { shareAlbum } from '../api/patch/patch-share-album';
 import { deleteAlbum } from '../api/delete/delete-album';
-import { Album } from '../types/album';
-
-interface CreateAlbumData {
-  title: string;
-  description?: string;
-}
 
 interface UpdateAlbumData {
   title?: string;

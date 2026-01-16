@@ -1,7 +1,6 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../../users/users.service';
-import { User } from '../../domain/entities/user.entity';
 
 @Injectable()
 export class GoogleLoginUseCase {
@@ -21,8 +20,10 @@ export class GoogleLoginUseCase {
 
     if (!user) {
       // Verificar se existe um usuário com o mesmo email
-      const existingUser = await this.usersService.findOneByEmail(googleUser.email);
-      
+      const existingUser = await this.usersService.findOneByEmail(
+        googleUser.email,
+      );
+
       if (existingUser) {
         // Atualizar usuário existente com Google ID
         user = await this.usersService.update(existingUser.id, {
@@ -37,7 +38,7 @@ export class GoogleLoginUseCase {
           name: googleUser.name,
           password: undefined,
         });
-        
+
         // Atualizar com Google ID e foto
         user = await this.usersService.update(user.id, {
           googleId: googleUser.googleId,
@@ -47,7 +48,10 @@ export class GoogleLoginUseCase {
       }
     } else {
       // Atualizar foto de perfil se necessário
-      if (googleUser.profilePicture && user.profilePicture !== googleUser.profilePicture) {
+      if (
+        googleUser.profilePicture &&
+        user.profilePicture !== googleUser.profilePicture
+      ) {
         user = await this.usersService.update(user.id, {
           profilePicture: googleUser.profilePicture,
         });

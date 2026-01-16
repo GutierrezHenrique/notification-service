@@ -1,4 +1,13 @@
-import { Controller, Post, Get, Body, UseGuards, Request, Req, Res } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Get,
+  Body,
+  UseGuards,
+  Request,
+  Req,
+  Res,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { AuthGuard } from '@nestjs/passport';
@@ -39,20 +48,23 @@ export class AuthController {
   async googleAuthRedirect(@Req() req, @Res() res: Response) {
     const result = await this.authService.googleLogin(req.user);
     const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
-    
+
     // Redireciona para o frontend com o token
     res.redirect(
-      `${frontendUrl}/auth/callback?token=${result.access_token}&user=${encodeURIComponent(JSON.stringify(result.user))}`
+      `${frontendUrl}/auth/callback?token=${result.access_token}&user=${encodeURIComponent(JSON.stringify(result.user))}`,
     );
   }
 
   @Post('google/login')
-  async googleLogin(@Body() body: {
-    googleId: string;
-    email: string;
-    name: string;
-    profilePicture?: string;
-  }) {
+  async googleLogin(
+    @Body()
+    body: {
+      googleId: string;
+      email: string;
+      name: string;
+      profilePicture?: string;
+    },
+  ) {
     return this.authService.googleLogin(body);
   }
 

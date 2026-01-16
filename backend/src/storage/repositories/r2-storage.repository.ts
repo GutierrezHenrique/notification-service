@@ -98,7 +98,10 @@ export class R2StorageRepository implements StorageRepository {
     return this.getSignedUrl(key);
   }
 
-  private async getSignedUrl(key: string, expiresIn: number = 3600): Promise<string> {
+  private async getSignedUrl(
+    key: string,
+    expiresIn: number = 3600,
+  ): Promise<string> {
     const command = new GetObjectCommand({
       Bucket: this.bucketName,
       Key: key,

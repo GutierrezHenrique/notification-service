@@ -1,9 +1,4 @@
-import {
-  IsString,
-  MinLength,
-  MaxLength,
-  IsNotEmpty,
-} from 'class-validator';
+import { IsString, MinLength, MaxLength, IsNotEmpty } from 'class-validator';
 
 export class ChangePasswordDto {
   @IsString({ message: 'Senha atual deve ser uma string' })
