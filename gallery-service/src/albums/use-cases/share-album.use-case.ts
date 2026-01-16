@@ -22,18 +22,18 @@ export class ShareAlbumUseCase {
 
     // Validate boolean type
     if (typeof isPublic !== 'boolean') {
-      throw new BadRequestException('isPublic must be a boolean');
+      throw new BadRequestException('isPublic deve ser um booleano');
     }
 
     const album = await this.albumsRepository.findOne(albumId);
 
     if (!album) {
-      throw new NotFoundException('Album not found');
+      throw new NotFoundException('Álbum não encontrado');
     }
 
     if (album.userId !== userId) {
       throw new UnauthorizedException(
-        'You do not have permission to share this album',
+        'Você não tem permissão para compartilhar este álbum',
       );
     }
 

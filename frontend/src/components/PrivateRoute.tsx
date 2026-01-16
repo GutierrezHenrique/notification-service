@@ -7,7 +7,7 @@ interface PrivateRouteProps {
 }
 
 const PrivateRoute = ({ children }: PrivateRouteProps) => {
-  const { isAuthenticated, _hasHydrated, setHasHydrated } = useAuthStore();
+  const { isAuthenticated, token, _hasHydrated, setHasHydrated } = useAuthStore();
 
   // Garantir que a hidratação seja marcada
   useEffect(() => {
@@ -28,7 +28,8 @@ const PrivateRoute = ({ children }: PrivateRouteProps) => {
     );
   }
 
-  if (!isAuthenticated) {
+  // Verificar tanto isAuthenticated quanto token para garantir que está realmente autenticado
+  if (!isAuthenticated || !token) {
     return <Navigate to="/login" replace />;
   }
 

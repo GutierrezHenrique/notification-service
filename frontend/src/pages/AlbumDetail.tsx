@@ -14,7 +14,6 @@ import {
   Button,
   Loading,
   EmptyState,
-  Table,
   TableRow,
   TableCell,
   ConfirmationDialog,
@@ -271,9 +270,9 @@ const AlbumDetail = () => {
                   </svg>
                   Adicionar fotos
                 </Button>
+              </div>
                 </>
               )}
-              </div>
             </div>
           </div>
 
@@ -368,25 +367,43 @@ const AlbumDetail = () => {
             ))}
           </div>
         ) : (
-          <Table
-            headers={[
-              isSelectionMode ? (
-                <input
-                  key="select-all"
-                  type="checkbox"
-                  checked={selectedPhotoIds.size === photos.length && photos.length > 0}
-                  onChange={toggleSelectAll}
-                  className="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
-                />
-              ) : null,
-              'Foto',
-              'Título',
-              'Tamanho',
-              'Data de aquisição',
-              'Cor predominante',
-              'Ações',
-            ].filter(Boolean)}
-          >
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  {isSelectionMode && (
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <input
+                        type="checkbox"
+                        checked={selectedPhotoIds.size === photos.length && photos.length > 0}
+                        onChange={toggleSelectAll}
+                        className="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
+                      />
+                    </th>
+                  )}
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Foto
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Título
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Tamanho
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Data de aquisição
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Cor predominante
+                  </th>
+                  {!isSelectionMode && (
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Ações
+                    </th>
+                  )}
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
             {photos.map((photo) => (
               <TableRow key={photo.id} className={selectedPhotoIds.has(photo.id) ? 'bg-indigo-50' : ''}>
                 {isSelectionMode && (
@@ -456,7 +473,9 @@ const AlbumDetail = () => {
                 )}
               </TableRow>
             ))}
-          </Table>
+              </tbody>
+            </table>
+          </div>
         )}
 
         {totalPages > 1 && (

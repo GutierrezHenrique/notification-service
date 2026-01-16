@@ -4,6 +4,7 @@ import { ListPhotosUseCase } from './use-cases/list-photos.use-case';
 import { GetPhotoUseCase } from './use-cases/get-photo.use-case';
 import { UpdatePhotoUseCase } from './use-cases/update-photo.use-case';
 import { DeletePhotoUseCase } from './use-cases/delete-photo.use-case';
+import { DeletePhotosUseCase } from './use-cases/delete-photos.use-case';
 import { SearchPhotosUseCase } from './use-cases/search-photos.use-case';
 import { CreatePhotoDto } from './dto/create-photo.dto';
 import { UpdatePhotoDto } from './dto/update-photo.dto';
@@ -17,6 +18,7 @@ export class PhotosService {
     private readonly getPhotoUseCase: GetPhotoUseCase,
     private readonly updatePhotoUseCase: UpdatePhotoUseCase,
     private readonly deletePhotoUseCase: DeletePhotoUseCase,
+    private readonly deletePhotosUseCase: DeletePhotosUseCase,
     private readonly searchPhotosUseCase: SearchPhotosUseCase,
   ) {}
 
@@ -64,6 +66,10 @@ export class PhotosService {
 
   async remove(id: string, userId: string): Promise<void> {
     return this.deletePhotoUseCase.execute(id, userId);
+  }
+
+  async removeMany(ids: string[], userId: string): Promise<void> {
+    return this.deletePhotosUseCase.execute(ids, userId);
   }
 
   async search(

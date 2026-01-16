@@ -1,5 +1,9 @@
 # Guia de Instalação - MyGallery
 
+## 🌐 Demonstração
+
+Acesse a aplicação em produção: **[https://photo.resolveup.com.br/](https://photo.resolveup.com.br/)**
+
 ## Pré-requisitos
 
 - Node.js 18 ou superior

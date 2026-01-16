@@ -101,6 +101,16 @@ export class PrismaPhotosRepository implements PhotosRepository {
     });
   }
 
+  async deleteMany(ids: string[]): Promise<void> {
+    await this.prisma.photo.deleteMany({
+      where: {
+        id: {
+          in: ids,
+        },
+      },
+    });
+  }
+
   async search(
     userId: string,
     query: string,

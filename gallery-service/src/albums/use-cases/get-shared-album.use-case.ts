@@ -20,7 +20,7 @@ export class GetSharedAlbumUseCase {
       this.logger.warn(
         `Failed access attempt to shared album with token ${shareToken.substring(0, 8)}...`,
       );
-      throw new NotFoundException('Shared album not found');
+      throw new NotFoundException('Álbum compartilhado não encontrado');
     }
 
     // Log successful access

@@ -13,7 +13,7 @@ export class UsersService {
     );
 
     if (existingUser) {
-      throw new ConflictException('Email already registered');
+      throw new ConflictException('Email já cadastrado');
     }
 
     return this.usersRepository.create(createUserDto);

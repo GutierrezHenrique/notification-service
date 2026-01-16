@@ -18,6 +18,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { PhotosService } from './photos.service';
 import { CreatePhotoDto } from './dto/create-photo.dto';
 import { UpdatePhotoDto } from './dto/update-photo.dto';
+import { DeletePhotosDto } from './dto/delete-photos.dto';
 import { JwtAuthGuard } from '../security/guards/jwt-auth.guard';
 import { ConfigService } from '@nestjs/config';
 import { PhotoViewModel } from './view-models/photo.view-model';
@@ -60,7 +61,7 @@ export class PhotosController {
   ): Promise<PhotoViewModel> {
     // FileValidationPipe ensures file is not undefined, but TypeScript doesn't know that
     if (!file) {
-      throw new BadRequestException('File is required');
+      throw new BadRequestException('Arquivo é obrigatório');
     }
     const photo = await this.photosService.create(
       albumId,
@@ -104,13 +105,13 @@ export class PhotosController {
 
     // Validate parsed values
     if (isNaN(pageNum) || pageNum < 1) {
-      throw new BadRequestException('Page must be a positive integer');
+      throw new BadRequestException('A página deve ser um número inteiro positivo');
     }
     if (isNaN(limitNum) || limitNum < 1 || limitNum > 100) {
-      throw new BadRequestException('Limit must be between 1 and 100');
+      throw new BadRequestException('O limite deve estar entre 1 e 100');
     }
     if (orderBy && orderBy !== 'asc' && orderBy !== 'desc') {
-      throw new BadRequestException('OrderBy must be "asc" or "desc"');
+      throw new BadRequestException('OrderBy deve ser "asc" ou "desc"');
     }
     const result = await this.photosService.findAll(
       albumId,
@@ -200,6 +201,11 @@ export class PhotosController {
       createdAt: photo.createdAt,
       updatedAt: photo.updatedAt,
     });
+  }
+
+  @Delete('batch')
+  removeMany(@Request() req, @Body() deletePhotosDto: DeletePhotosDto) {
+    return this.photosService.removeMany(deletePhotosDto.ids, req.user.id);
   }
 
   @Delete(':id')

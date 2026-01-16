@@ -2,6 +2,10 @@
 
 Este documento descreve como migrar o código do backend monolítico para a arquitetura de microserviços.
 
+## 🌐 Demonstração
+
+Acesse a aplicação em produção: **[https://photo.resolveup.com.br/](https://photo.resolveup.com.br/)**
+
 ## 📋 Status da Migração
 
 ### ✅ Completado

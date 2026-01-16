@@ -1,0 +1,195 @@
+
+> photo-for-you-auth-service@1.0.0 start:dev /Users/gutierrezramos/Dev/MyGallery/auth-service
+> nest start --watch
+
+[2J[3J[H[[90m10:48:04 AM[0m] Starting compilation in watch mode...
+
+[[90m10:48:06 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] PassportModule dependencies initialized +6ms
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +0ms
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +1ms
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 17021  - 01/16/2026, 10:48:07 AM     LOG [InstanceLoader] EmailModule dependencies initialized +3ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [InstanceLoader] JwtModule dependencies initialized +846ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [InstanceLoader] DatabaseModule dependencies initialized +0ms
+🔐 Google OAuth Config:
+  - Client ID: ✓ Configurado
+  - Client Secret: ✓ Configurado
+  - Callback URL: http://localhost:3000/auth/google/callback
+  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [InstanceLoader] UsersModule dependencies initialized +2ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RoutesResolver] AuthController {/auth}: +24ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +1ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/validate, POST} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/google, GET} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/google/callback, GET} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/google/login, POST} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/forgot-password, POST} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/auth/reset-password, POST} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/users/me, GET} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/users/me, PATCH} route +1ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/users/me/password, PATCH} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [RouterExplorer] Mapped {/users/me, DELETE} route +0ms
+[Nest] 17021  - 01/16/2026, 10:48:08 AM     LOG [NestApplication] Nest application successfully started +93ms
+Auth Service is running on: http://localhost:3001
+Environment: development
+[2J[3J[H[[90m2:32:55 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:32:56 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] PassportModule dependencies initialized +7ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] EmailModule dependencies initialized +4ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] JwtModule dependencies initialized +79ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] DatabaseModule dependencies initialized +0ms
+🔐 Google OAuth Config:
+  - Client ID: ✓ Configurado
+  - Client Secret: ✓ Configurado
+  - Callback URL: http://localhost:3000/auth/google/callback
+  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] UsersModule dependencies initialized +2ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RoutesResolver] AuthController {/auth}: +38ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +1ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/validate, POST} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/google, GET} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/google/callback, GET} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/google/login, POST} route +1ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/forgot-password, POST} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/auth/reset-password, POST} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/users/me, GET} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/users/me, PATCH} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/users/me/password, PATCH} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [RouterExplorer] Mapped {/users/me, DELETE} route +0ms
+[Nest] 59535  - 01/16/2026, 2:32:57 PM     LOG [NestApplication] Nest application successfully started +110ms
+Auth Service is running on: http://localhost:3001
+Environment: development
+[2J[3J[H[[90m2:32:58 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:32:58 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] PassportModule dependencies initialized +7ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] EmailModule dependencies initialized +5ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] JwtModule dependencies initialized +3ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] DatabaseModule dependencies initialized +0ms
+🔐 Google OAuth Config:
+  - Client ID: ✓ Configurado
+  - Client Secret: ✓ Configurado
+  - Callback URL: http://localhost:3000/auth/google/callback
+  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] UsersModule dependencies initialized +2ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RoutesResolver] AuthController {/auth}: +18ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +1ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/validate, POST} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/google, GET} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/google/callback, GET} route +1ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/google/login, POST} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/forgot-password, POST} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/auth/reset-password, POST} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/users/me, GET} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/users/me, PATCH} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/users/me/password, PATCH} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [RouterExplorer] Mapped {/users/me, DELETE} route +0ms
+[Nest] 59637  - 01/16/2026, 2:32:59 PM     LOG [NestApplication] Nest application successfully started +109ms
+Auth Service is running on: http://localhost:3001
+Environment: development
+[2J[3J[H[[90m2:33:32 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:33:32 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] PassportModule dependencies initialized +7ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] AppModule dependencies initialized +1ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] EmailModule dependencies initialized +4ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] JwtModule dependencies initialized +3ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] DatabaseModule dependencies initialized +0ms
+🔐 Google OAuth Config:
+  - Client ID: ✓ Configurado
+  - Client Secret: ✓ Configurado
+  - Callback URL: http://localhost:3000/auth/google/callback
+  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] UsersModule dependencies initialized +1ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RoutesResolver] AuthController {/auth}: +27ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +1ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/validate, POST} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/google, GET} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/google/callback, GET} route +1ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/google/login, POST} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/forgot-password, POST} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/auth/reset-password, POST} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/users/me, GET} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/users/me, PATCH} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/users/me/password, PATCH} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [RouterExplorer] Mapped {/users/me, DELETE} route +0ms
+[Nest] 60561  - 01/16/2026, 2:33:33 PM     LOG [NestApplication] Nest application successfully started +170ms
+Auth Service is running on: http://localhost:3001
+Environment: development
+[2J[3J[H[[90m2:39:13 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:39:14 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] PassportModule dependencies initialized +7ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +1ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] EmailModule dependencies initialized +4ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] JwtModule dependencies initialized +3ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] DatabaseModule dependencies initialized +0ms
+🔐 Google OAuth Config:
+  - Client ID: ✓ Configurado
+  - Client Secret: ✓ Configurado
+  - Callback URL: http://localhost:3000/auth/google/callback
+  ⚠️  IMPORTANTE: Configure esta URL no Google Console como callback autorizado!
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] UsersModule dependencies initialized +2ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RoutesResolver] AuthController {/auth}: +36ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +1ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/validate, POST} route +1ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/google, GET} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/google/callback, GET} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/google/login, POST} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/forgot-password, POST} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/auth/reset-password, POST} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/users/me, GET} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/users/me, PATCH} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/users/me/password, PATCH} route +1ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [RouterExplorer] Mapped {/users/me, DELETE} route +0ms
+[Nest] 69839  - 01/16/2026, 2:39:15 PM     LOG [NestApplication] Nest application successfully started +93ms
+Auth Service is running on: http://localhost:3001
+Environment: development
+ ELIFECYCLE  Command failed.

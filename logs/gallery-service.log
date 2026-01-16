@@ -1,0 +1,120 @@
+
+> photo-for-you-gallery-service@1.0.0 start:dev /Users/gutierrezramos/Dev/MyGallery/gallery-service
+> nest start --watch
+
+[2J[3J[H[[90m10:48:12 AM[0m] Starting compilation in watch mode...
+
+[[90m10:48:15 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +6ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] StorageModule dependencies initialized +4ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] AuthClientModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] DatabaseModule dependencies initialized +608ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] AlbumsModule dependencies initialized +7ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [InstanceLoader] PhotosModule dependencies initialized +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RoutesResolver] AlbumsController {/albums}: +8ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums, POST} route +2ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums, GET} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/shared/:shareToken, GET} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:id, GET} route +1ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:id/share, PATCH} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:id, PATCH} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:id, DELETE} route +1ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RoutesResolver] PhotosController {/albums/:albumId/photos}: +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos, POST} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos, GET} route +1ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos/:id, GET} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos/:id, PATCH} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos/:id, DELETE} route +1ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RoutesResolver] SearchPhotosController {/photos}: +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [RouterExplorer] Mapped {/photos/search, GET} route +0ms
+[Nest] 17376  - 01/16/2026, 10:48:16 AM     LOG [NestApplication] Nest application successfully started +118ms
+Gallery Service is running on: http://localhost:3002
+Environment: development
+[Nest] 17376  - 01/16/2026, 2:46:03 PM   ERROR [ExceptionsHandler] 
+Invalid `this.prisma.album.create()` invocation in
+/Users/gutierrezramos/Dev/MyGallery/gallery-service/src/database/repositories/prisma-albums.repository.ts:14:43
+
+  11 constructor(private readonly prisma: PrismaService) {}
+  12 
+  13 async create(userId: string, createAlbumDto: CreateAlbumDto): Promise<Album> {
+→ 14   const album = await this.prisma.album.create({
+         data: {
+           title: "teste 13",
+           description: "",
+       +   userId: String
+         },
+         include: {
+           photos: true
+         }
+       })
+
+Argument `userId` is missing.
+PrismaClientValidationError: 
+Invalid `this.prisma.album.create()` invocation in
+/Users/gutierrezramos/Dev/MyGallery/gallery-service/src/database/repositories/prisma-albums.repository.ts:14:43
+
+  11 constructor(private readonly prisma: PrismaService) {}
+  12 
+  13 async create(userId: string, createAlbumDto: CreateAlbumDto): Promise<Album> {
+→ 14   const album = await this.prisma.album.create({
+         data: {
+           title: "teste 13",
+           description: "",
+       +   userId: String
+         },
+         include: {
+           photos: true
+         }
+       })
+
+Argument `userId` is missing.
+    at wn (/Users/gutierrezramos/Dev/MyGallery/gallery-service/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/Users/gutierrezramos/Dev/MyGallery/gallery-service/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/Users/gutierrezramos/Dev/MyGallery/gallery-service/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/Users/gutierrezramos/Dev/MyGallery/gallery-service/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/Users/gutierrezramos/Dev/MyGallery/gallery-service/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async PrismaAlbumsRepository.create (/Users/gutierrezramos/Dev/MyGallery/gallery-service/src/database/repositories/prisma-albums.repository.ts:14:19)
+    at async AlbumsController.create (/Users/gutierrezramos/Dev/MyGallery/gallery-service/src/albums/albums.controller.ts:33:19)
+[2J[3J[H[[90m2:46:34 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:46:35 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +13ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] StorageModule dependencies initialized +4ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] AuthClientModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] DatabaseModule dependencies initialized +3ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] AlbumsModule dependencies initialized +1ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [InstanceLoader] PhotosModule dependencies initialized +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RoutesResolver] AlbumsController {/albums}: +6ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums, POST} route +1ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums, GET} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/shared/:shareToken, GET} route +1ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:id, GET} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:id/share, PATCH} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:id, PATCH} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:id, DELETE} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RoutesResolver] PhotosController {/albums/:albumId/photos}: +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos, POST} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos, GET} route +1ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos/:id, GET} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos/:id, PATCH} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/albums/:albumId/photos/:id, DELETE} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RoutesResolver] SearchPhotosController {/photos}: +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [RouterExplorer] Mapped {/photos/search, GET} route +0ms
+[Nest] 81667  - 01/16/2026, 2:46:37 PM     LOG [NestApplication] Nest application successfully started +141ms
+Gallery Service is running on: http://localhost:3002
+Environment: development
+ ELIFECYCLE  Command failed.

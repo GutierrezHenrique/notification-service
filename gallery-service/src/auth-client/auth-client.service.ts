@@ -21,24 +21,40 @@ export class AuthClientService {
   ): Promise<{ userId: string; email: string }> {
     try {
       const response = await firstValueFrom(
-        this.httpService.post(`${this.authServiceUrl}/auth/validate`, {
-          token,
-        }),
+        this.httpService.post(
+          `${this.authServiceUrl}/auth/validate`,
+          { token },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            timeout: 10000,
+          },
+        ),
       );
 
-      if (response.data.valid) {
+      if (response.data?.valid && response.data?.user) {
         return {
-          userId: response.data.userId,
-          email: response.data.email,
+          userId: response.data.user.id,
+          email: response.data.user.email,
         };
       }
 
-      throw new UnauthorizedException('Invalid token');
-    } catch (error) {
+      throw new UnauthorizedException('Token inválido');
+    } catch (error: any) {
       if (error.response?.status === 401 || error.response?.status === 403) {
-        throw new UnauthorizedException('Invalid token');
+        throw new UnauthorizedException('Token inválido');
       }
-      throw new UnauthorizedException('Failed to validate token');
+      
+      // Log para debug
+      console.error('Token validation error:', {
+        status: error.response?.status,
+        data: error.response?.data,
+        message: error.message,
+        url: `${this.authServiceUrl}/auth/validate`,
+      });
+      
+      throw new UnauthorizedException('Falha ao validar token');
     }
   }
 }

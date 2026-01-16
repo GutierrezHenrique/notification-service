@@ -1,0 +1,26 @@
+
+> photo-for-you-notification-service@1.0.0 start:dev /Users/gutierrezramos/Dev/MyGallery/notification-service
+> nest start --watch
+
+[2J[3J[H[[90m10:48:18 AM[0m] Starting compilation in watch mode...
+
+[[90m10:48:20 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [InstanceLoader] AppModule dependencies initialized +4ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM    WARN [PushNotificationService] FIREBASE_SERVICE_ACCOUNT not configured. Push notifications will be disabled.
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [InstanceLoader] DatabaseModule dependencies initialized +452ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [InstanceLoader] NotificationsModule dependencies initialized +6ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [RoutesResolver] NotificationsController {/notifications}: +300ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [RouterExplorer] Mapped {/notifications, GET} route +1ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [RouterExplorer] Mapped {/notifications/unread, GET} route +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [RouterExplorer] Mapped {/notifications/fcm/register, POST} route +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [RouterExplorer] Mapped {/notifications/fcm/token, DELETE} route +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [RouterExplorer] Mapped {/notifications/fcm/test, POST} route +0ms
+[Nest] 17570  - 01/16/2026, 10:48:21 AM     LOG [NestApplication] Nest application successfully started +191ms
+Notification Service is running on: http://localhost:3003
+Environment: development
+ ELIFECYCLE  Command failed.

@@ -1,5 +1,9 @@
 # API Gateway - Photo For You
 
+## 🌐 Demonstração
+
+Acesse a aplicação em produção: **[https://photo.resolveup.com.br/](https://photo.resolveup.com.br/)**
+
 ## 🎯 Visão Geral
 
 O API Gateway é o ponto de entrada único para todos os microserviços. Ele roteia requisições para os serviços apropriados e centraliza autenticação, rate limiting e logging.

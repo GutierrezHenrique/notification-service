@@ -20,7 +20,7 @@ export class UsersService {
     );
 
     if (existingUser) {
-      throw new ConflictException('Email already registered');
+      throw new ConflictException('Email já cadastrado');
     }
 
     return this.usersRepository.create(createUserDto);
@@ -40,7 +40,7 @@ export class UsersService {
       const user = await this.usersRepository.findOneById(id);
 
       if (!user) {
-        throw new UnauthorizedException('User not found');
+        throw new UnauthorizedException('Usuário não encontrado');
       }
 
       // Verificar se o usuário fez login via OAuth
@@ -56,7 +56,7 @@ export class UsersService {
           data.email,
         );
         if (existingUser && existingUser.id !== id) {
-          throw new ConflictException('Email already registered');
+          throw new ConflictException('Email já cadastrado');
         }
       }
     }
@@ -79,7 +79,7 @@ export class UsersService {
     const user = await this.usersRepository.findOneById(userId);
 
     if (!user) {
-      throw new UnauthorizedException('User not found');
+      throw new UnauthorizedException('Usuário não encontrado');
     }
 
     // Verificar se o usuário fez login via OAuth (não tem senha)
@@ -109,7 +109,7 @@ export class UsersService {
     const user = await this.usersRepository.findOneById(id);
 
     if (!user) {
-      throw new UnauthorizedException('User not found');
+      throw new UnauthorizedException('Usuário não encontrado');
     }
 
     await this.usersRepository.delete(id);

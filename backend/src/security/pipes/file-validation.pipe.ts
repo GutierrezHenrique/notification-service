@@ -17,20 +17,20 @@ export class FileValidationPipe implements PipeTransform {
 
   transform(value: Express.Multer.File | undefined): Express.Multer.File {
     if (!value) {
-      throw new BadRequestException('File is required');
+      throw new BadRequestException('Arquivo é obrigatório');
     }
 
     // Validate file size
     if (value.size > this.maxSize) {
       throw new BadRequestException(
-        `File size exceeds maximum allowed size of ${this.maxSize / 1024 / 1024}MB`,
+        `Tamanho do arquivo excede o máximo permitido de ${this.maxSize / 1024 / 1024}MB`,
       );
     }
 
     // Validate MIME type
     if (!this.allowedMimeTypes.includes(value.mimetype)) {
       throw new BadRequestException(
-        `File type ${value.mimetype} is not allowed. Allowed types: ${this.allowedMimeTypes.join(', ')}`,
+        `Tipo de arquivo ${value.mimetype} não é permitido. Tipos permitidos: ${this.allowedMimeTypes.join(', ')}`,
       );
     }
 
@@ -39,7 +39,7 @@ export class FileValidationPipe implements PipeTransform {
     const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
     if (!extension || !allowedExtensions.includes(extension)) {
       throw new BadRequestException(
-        `File extension .${extension} is not allowed. Allowed extensions: ${allowedExtensions.join(', ')}`,
+        `Extensão de arquivo .${extension} não é permitida. Extensões permitidas: ${allowedExtensions.join(', ')}`,
       );
     }
 
@@ -53,7 +53,7 @@ export class FileValidationPipe implements PipeTransform {
     const buffer = file.buffer;
     if (!buffer || buffer.length < 4) {
       throw new BadRequestException(
-        'Invalid file: file too small or corrupted',
+        'Arquivo inválido: arquivo muito pequeno ou corrompido',
       );
     }
 
@@ -78,12 +78,12 @@ export class FileValidationPipe implements PipeTransform {
           const webpFormat = buffer.toString('ascii', 8, 12);
           if (webpHeader !== 'RIFF' || webpFormat !== 'WEBP') {
             throw new BadRequestException(
-              'Invalid file: file signature does not match MIME type',
+              'Arquivo inválido: assinatura do arquivo não corresponde ao tipo MIME',
             );
           }
         } else {
           throw new BadRequestException(
-            'Invalid file: file signature does not match MIME type',
+            'Arquivo inválido: assinatura do arquivo não corresponde ao tipo MIME',
           );
         }
       }

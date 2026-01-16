@@ -14,11 +14,11 @@ export class GetPhotoUseCase {
     const photo = await this.photosRepository.findOne(id);
 
     if (!photo) {
-      throw new NotFoundException('Photo not found');
+      throw new NotFoundException('Foto não encontrada');
     }
 
     if (photo.album.userId !== userId) {
-      throw new ForbiddenException('You do not have access to this photo');
+      throw new ForbiddenException('Você não tem acesso a esta foto');
     }
 
     return photo;

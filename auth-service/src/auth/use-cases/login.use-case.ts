@@ -16,12 +16,12 @@ export class LoginUseCase {
 
     // Verificar se o usuário existe e tem senha (não é OAuth)
     if (!user || !user.password) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Credenciais inválidas');
     }
 
     // Verificar se a senha está correta
     if (!(await bcrypt.compare(loginDto.password, user.password))) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Credenciais inválidas');
     }
 
     const payload = { email: user.email, sub: user.id };

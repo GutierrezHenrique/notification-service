@@ -24,13 +24,13 @@ export class ListPhotosUseCase {
 
     // Validate pagination parameters
     if (page < 1 || !Number.isInteger(page)) {
-      throw new BadRequestException('Page must be a positive integer');
+      throw new BadRequestException('A página deve ser um número inteiro positivo');
     }
     if (limit < 1 || limit > 100 || !Number.isInteger(limit)) {
-      throw new BadRequestException('Limit must be between 1 and 100');
+      throw new BadRequestException('O limite deve estar entre 1 e 100');
     }
     if (orderBy !== 'asc' && orderBy !== 'desc') {
-      throw new BadRequestException('OrderBy must be "asc" or "desc"');
+      throw new BadRequestException('OrderBy deve ser "asc" ou "desc"');
     }
 
     // Verify album belongs to user

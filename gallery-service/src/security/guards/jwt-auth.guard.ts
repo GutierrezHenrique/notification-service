@@ -16,7 +16,7 @@ export class JwtAuthGuard implements CanActivate {
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       throw new UnauthorizedException(
-        'Missing or invalid authorization header',
+        'Cabeçalho de autorização ausente ou inválido',
       );
     }
 
@@ -28,7 +28,7 @@ export class JwtAuthGuard implements CanActivate {
       request.user = { id: userId, email };
       return true;
     } catch (error) {
-      throw new UnauthorizedException('Invalid token');
+      throw new UnauthorizedException('Token inválido');
     }
   }
 }

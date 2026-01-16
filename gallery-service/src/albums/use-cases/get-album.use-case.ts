@@ -19,11 +19,11 @@ export class GetAlbumUseCase {
     const album = await this.albumsRepository.findOne(id);
 
     if (!album) {
-      throw new NotFoundException('Album not found');
+      throw new NotFoundException('Álbum não encontrado');
     }
 
     if (album.userId !== userId) {
-      throw new ForbiddenException('You do not have access to this album');
+      throw new ForbiddenException('Você não tem acesso a este álbum');
     }
 
     return album;

@@ -1,0 +1,948 @@
+
+> photo-for-you-api-gateway@1.0.0 start:dev /Users/gutierrezramos/Dev/MyGallery/api-gateway
+> nest start --watch
+
+[2J[3J[H[[90m10:48:28 AM[0m] Starting compilation in watch mode...
+
+[[90m10:48:29 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +1ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +352ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +1ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +1ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +1ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +1ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 17841  - 01/16/2026, 10:48:30 AM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:25:11 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:25:11 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +10ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +265ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +2ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +1ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +1ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +1ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +1ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 73851  - 01/16/2026, 11:25:12 AM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:25:18 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:25:19 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +6ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +165ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +1ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +1ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +1ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +1ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 74226  - 01/16/2026, 11:25:19 AM     LOG [NestApplication] Nest application successfully started +0ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:25:21 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:25:22 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +6ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +95ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +1ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +1ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +1ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 74388  - 01/16/2026, 11:25:22 AM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:25:35 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:25:35 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +286ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +1ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +1ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +1ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 74800  - 01/16/2026, 11:25:36 AM     LOG [NestApplication] Nest application successfully started +0ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:45:54 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:45:54 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +411ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +1ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +1ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +1ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 6970  - 01/16/2026, 11:45:55 AM     LOG [NestApplication] Nest application successfully started +0ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:46:00 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:46:00 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +6ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +179ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +1ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +1ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +1ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 7170  - 01/16/2026, 11:46:01 AM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m11:46:10 AM[0m] File change detected. Starting incremental compilation...
+
+[[90m11:46:10 AM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 7450  - 01/16/2026, 11:46:10 AM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +239ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +1ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +1ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +1ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 7450  - 01/16/2026, 11:46:11 AM     LOG [NestApplication] Nest application successfully started +0ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:33:07 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:33:07 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +7ms
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 59884  - 01/16/2026, 2:33:08 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +289ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +2ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +1ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +1ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +1ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +1ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +1ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 59884  - 01/16/2026, 2:33:09 PM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:39:59 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:39:59 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +6ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +290ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +1ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +1ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 71045  - 01/16/2026, 2:40:00 PM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:49:21 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:49:21 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +304ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +1ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +1ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +1ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos/:id, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 86124  - 01/16/2026, 2:49:22 PM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:49:58 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:49:59 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] AppModule dependencies initialized +1ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +254ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +1ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +1ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos/:id, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +1ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 87234  - 01/16/2026, 2:50:00 PM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:50:01 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:50:01 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +125ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +1ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +1ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos/:id, DELETE} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 87312  - 01/16/2026, 2:50:02 PM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:50:09 PM[0m] File change detected. Starting incremental compilation...
+
+[91merror[0m[90m TS2688: [0mCannot find type definition file for 'form-data'.
+  The file is in the program because:
+    Entry point for implicit type library 'form-data'
+
+[[90m2:50:09 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m2:50:13 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:50:13 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +9ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +192ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +1ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +1ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +1ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +1ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos/:id, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 87678  - 01/16/2026, 2:50:14 PM     LOG [NestApplication] Nest application successfully started +1ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+[2J[3J[H[[90m2:58:34 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:58:34 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +5ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] HttpModule dependencies initialized +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [InstanceLoader] ProxyModule dependencies initialized +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RoutesResolver] AuthProxyController {/api/auth}: +447ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/register, POST} route +2ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/login, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/forgot-password, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/reset-password, POST} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/verify-email, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/refresh, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/validate, GET} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/google, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/google/callback, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/auth/google/login, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RoutesResolver] UsersProxyController {/api/users}: +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/users/me, GET} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/users/me, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/users/me/password, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/users/me, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RoutesResolver] GalleryProxyController {/api/albums}: +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums, GET} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, GET} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:id, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:id/share, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/shared/:shareToken, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos, GET} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/albums/:albumId/photos/:id, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RoutesResolver] PhotosProxyController {/api/photos}: +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/photos/search, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, GET} route +4ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/photos/:id, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RoutesResolver] NotificationProxyController {/api/notifications}: +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/unread, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id/read, PATCH} route +1ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/read-all, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/:id, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/register, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/token, DELETE} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/notifications/fcm/test, POST} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RoutesResolver] PreferencesProxyController {/api/preferences}: +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/preferences, GET} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [RouterExplorer] Mapped {/api/preferences, PATCH} route +0ms
+[Nest] 718  - 01/16/2026, 2:58:36 PM     LOG [NestApplication] Nest application successfully started +2ms
+🚀 API Gateway running on: http://localhost:3000
+📡 Auth Service: undefined
+🖼️  Gallery Service: undefined
+🔔 Notification Service: undefined
+Environment: development
+ ELIFECYCLE  Command failed.

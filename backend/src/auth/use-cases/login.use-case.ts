@@ -15,7 +15,7 @@ export class LoginUseCase {
     const user = await this.usersService.findOneByEmail(loginDto.email);
 
     if (!user || !(await bcrypt.compare(loginDto.password, user.password))) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Credenciais inválidas');
     }
 
     const payload = { email: user.email, sub: user.id };

@@ -13,6 +13,7 @@ import {
   UploadedFile,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
+import * as FormData from 'form-data';
 import { ProxyService } from '../proxy.service';
 import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
 
@@ -118,8 +119,6 @@ export class GalleryProxyController {
   ) {
     // For file uploads, forward the multipart/form-data directly
     // We'll use the raw body and forward headers
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const FormData = require('form-data');
     const formData = new FormData();
 
     if (file) {
@@ -158,6 +157,36 @@ export class GalleryProxyController {
       undefined,
       { Authorization: auth },
       query,
+    );
+  }
+
+  @Delete(':albumId/photos/batch')
+  @UseGuards(JwtAuthGuard)
+  async deletePhotos(
+    @Param('albumId') albumId: string,
+    @Body() body: any,
+    @Headers('authorization') auth: string,
+  ) {
+    return this.proxyService.proxyToGalleryService(
+      'DELETE',
+      `/albums/${albumId}/photos/batch`,
+      body,
+      { Authorization: auth },
+    );
+  }
+
+  @Delete(':albumId/photos/:id')
+  @UseGuards(JwtAuthGuard)
+  async deletePhoto(
+    @Param('albumId') albumId: string,
+    @Param('id') id: string,
+    @Headers('authorization') auth: string,
+  ) {
+    return this.proxyService.proxyToGalleryService(
+      'DELETE',
+      `/albums/${albumId}/photos/${id}`,
+      undefined,
+      { Authorization: auth },
     );
   }
 }

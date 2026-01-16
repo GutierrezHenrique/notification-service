@@ -36,6 +36,16 @@ api.interceptors.request.use(
       // Garantir que o header seja removido se não houver token
       delete config.headers.Authorization;
     }
+
+    // Log para debug (apenas em desenvolvimento)
+    if (import.meta.env.DEV && config.url) {
+      console.debug('API Request:', {
+        method: config.method?.toUpperCase(),
+        url: config.url,
+        hasToken: !!token,
+      });
+    }
+
     return config;
   },
   (error) => {
@@ -47,15 +57,41 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // Apenas fazer logout se for realmente um erro de autenticação (401)
+    // e não um erro de conexão ou timeout
     if (error.response?.status === 401) {
-      // Usar o método logout do store
-      const { logout } = useAuthStore.getState();
-      logout();
-      // Redirecionar apenas se não estiver já na página de login
-      if (window.location.pathname !== '/login') {
-        window.location.href = '/login';
+      const token = useAuthStore.getState().token;
+
+      // Log para debug
+      console.warn('401 Unauthorized:', {
+        url: error.config?.url,
+        hasToken: !!token,
+        pathname: window.location.pathname,
+      });
+
+      // Só fazer logout se realmente tiver um token (significa que o token é inválido)
+      // Se não tiver token, pode ser que a requisição foi feita antes do login
+      if (token) {
+        const { logout } = useAuthStore.getState();
+        logout();
+        // Redirecionar apenas se não estiver já na página de login
+        if (window.location.pathname !== '/login') {
+          window.location.href = '/login';
+        }
       }
+    } else if (
+      error.code === 'ECONNREFUSED' ||
+      error.code === 'ETIMEDOUT' ||
+      error.code === 'ENOTFOUND'
+    ) {
+      // Erros de conexão não devem fazer logout
+      console.error('Connection error:', {
+        code: error.code,
+        message: error.message,
+        url: error.config?.url,
+      });
     }
+
     return Promise.reject(error);
   },
 );

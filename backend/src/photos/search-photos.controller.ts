@@ -33,7 +33,7 @@ export class SearchPhotosController {
     limit: number;
   }> {
     if (!query) {
-      throw new BadRequestException('Search query is required');
+      throw new BadRequestException('Consulta de busca é obrigatória');
     }
 
     // Validate and parse pagination parameters
@@ -42,13 +42,13 @@ export class SearchPhotosController {
 
     // Validate parsed values
     if (isNaN(pageNum) || pageNum < 1) {
-      throw new BadRequestException('Page must be a positive integer');
+      throw new BadRequestException('A página deve ser um número inteiro positivo');
     }
     if (isNaN(limitNum) || limitNum < 1 || limitNum > 100) {
-      throw new BadRequestException('Limit must be between 1 and 100');
+      throw new BadRequestException('O limite deve estar entre 1 e 100');
     }
     if (orderBy && orderBy !== 'asc' && orderBy !== 'desc') {
-      throw new BadRequestException('OrderBy must be "asc" or "desc"');
+      throw new BadRequestException('OrderBy deve ser "asc" ou "desc"');
     }
 
     const result = await this.photosService.search(

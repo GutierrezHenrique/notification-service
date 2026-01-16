@@ -11,6 +11,7 @@ import { ListPhotosUseCase } from './use-cases/list-photos.use-case';
 import { GetPhotoUseCase } from './use-cases/get-photo.use-case';
 import { UpdatePhotoUseCase } from './use-cases/update-photo.use-case';
 import { DeletePhotoUseCase } from './use-cases/delete-photo.use-case';
+import { DeletePhotosUseCase } from './use-cases/delete-photos.use-case';
 import { SearchPhotosUseCase } from './use-cases/search-photos.use-case';
 
 @Module({
@@ -23,6 +24,7 @@ import { SearchPhotosUseCase } from './use-cases/search-photos.use-case';
     GetPhotoUseCase,
     UpdatePhotoUseCase,
     DeletePhotoUseCase,
+    DeletePhotosUseCase,
     SearchPhotosUseCase,
   ],
 })

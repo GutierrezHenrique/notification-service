@@ -30,12 +30,13 @@ export const Table = ({ headers, children }: TableProps) => {
 interface TableRowProps {
   children: ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
-export const TableRow = ({ children, onClick }: TableRowProps) => {
+export const TableRow = ({ children, onClick, className = '' }: TableRowProps) => {
   return (
     <tr
-      className={`${onClick ? 'cursor-pointer hover:bg-gray-50' : ''}`}
+      className={`${onClick ? 'cursor-pointer hover:bg-gray-50' : ''} ${className}`}
       onClick={onClick}
     >
       {children}

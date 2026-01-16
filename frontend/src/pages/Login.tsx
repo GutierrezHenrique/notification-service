@@ -23,11 +23,6 @@ const Login = () => {
   const { addToast } = useToast();
   const { isAuthenticated, _hasHydrated } = useAuthStore();
 
-  // Redirecionar se já estiver autenticado
-  if (_hasHydrated && isAuthenticated) {
-    return <Navigate to="/albums" replace />;
-  }
-
   const onSubmit = (data: LoginForm) => {
     loginMutation.mutate(data);
   };
@@ -37,6 +32,11 @@ const Login = () => {
       addToast(getErrorMessage(loginMutation.error) || 'Erro ao fazer login', 'error');
     }
   }, [loginMutation.isError, loginMutation.error, addToast]);
+
+  // Redirecionar se já estiver autenticado (depois de todos os hooks)
+  if (_hasHydrated && isAuthenticated) {
+    return <Navigate to="/albums" replace />;
+  }
 
   return (
     <div className="min-h-screen flex bg-white">
@@ -135,7 +135,7 @@ const Login = () => {
                 onClick={() => {
                   // O API Gateway redireciona para o auth-service
                   const apiUrl =
-                    import.meta.env.VITE_API_URL || 'http://localhost:3000';
+                    import.meta.env.VITE_API_URL || 'https://connect-photo.resolveup.com.br';
                   // Remove /api duplicado: se a URL já termina com /api, não adiciona novamente
                   const baseUrl = apiUrl.endsWith('/api')
                     ? apiUrl.slice(0, -4) // Remove /api do final

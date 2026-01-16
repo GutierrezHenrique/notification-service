@@ -1,5 +1,9 @@
 # 🚀 Início Rápido - Microserviços em Modo Debug
 
+## 🌐 Demonstração
+
+Acesse a aplicação em produção: **[https://photo.resolveup.com.br/](https://photo.resolveup.com.br/)**
+
 ## ⚡ Início Rápido (3 comandos)
 
 ### 1. Preparar Bancos de Dados (se necessário)
