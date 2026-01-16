@@ -1,0 +1,44 @@
+// Schema do banco de dados para o microserviço de galeria
+// Este banco contém apenas dados de álbuns e fotos
+// user_id referencia o ID do usuário no Auth Service
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("GALLERY_DATABASE_URL")
+}
+
+model Album {
+  id          String   @id @default(uuid())
+  title       String
+  description String?  @db.Text
+  userId      String   @map("user_id") // Referência ao Auth Service
+  photos      Photo[]
+  isPublic    Boolean  @default(false) @map("is_public")
+  shareToken  String?  @unique @map("share_token")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("albums")
+}
+
+model Photo {
+  id             String    @id @default(uuid())
+  title          String
+  description    String?   @db.Text
+  filename       String
+  originalName   String    @map("original_name")
+  mimeType       String    @map("mime_type")
+  size           BigInt
+  acquisitionDate DateTime? @map("acquisition_date")
+  dominantColor  String?   @map("dominant_color")
+  albumId        String    @map("album_id")
+  album          Album     @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  @@map("photos")
+}

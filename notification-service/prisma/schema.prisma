@@ -1,0 +1,56 @@
+// Schema do banco de dados para o microserviço de notificações
+// Este banco contém apenas dados de notificações
+// user_id referencia o ID do usuário no Auth Service
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("NOTIFICATION_DATABASE_URL")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id") // Referência ao Auth Service
+  type      String   // 'email', 'system', 'album_shared', 'photo_uploaded', etc
+  title     String
+  message   String   @db.Text
+  read      Boolean  @default(false)
+  readAt    DateTime? @map("read_at")
+  metadata  Json? // Dados adicionais (ex: albumId, photoId, etc)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId, read])
+  @@index([userId, createdAt])
+  @@map("notifications")
+}
+
+model NotificationPreference {
+  id              String   @id @default(uuid())
+  userId          String   @unique @map("user_id") // Referência ao Auth Service
+  emailEnabled    Boolean  @default(true) @map("email_enabled")
+  systemEnabled   Boolean  @default(true) @map("system_enabled")
+  albumShared     Boolean  @default(true) @map("album_shared")
+  photoUploaded   Boolean  @default(true) @map("photo_uploaded")
+  weeklyDigest    Boolean  @default(false) @map("weekly_digest")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  @@map("notification_preferences")
+}
+
+model FcmToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id") // Referência ao Auth Service
+  token     String   @unique
+  deviceId  String?  @map("device_id")
+  platform  String?  // 'web', 'ios', 'android'
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId])
+  @@map("fcm_tokens")
+}

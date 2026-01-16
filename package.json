@@ -1,0 +1,13 @@
+{
+  "name": "mygallery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MyGallery - Full stack application",
+  "scripts": {
+    "format": "pnpm --filter backend format && pnpm --filter frontend format",
+    "format:check": "pnpm --filter backend format:check && pnpm --filter frontend format:check",
+    "format:backend": "cd backend && pnpm format",
+    "format:frontend": "cd frontend && pnpm format"
+  },
+  "packageManager": "pnpm@10.24.0+sha512.01ffae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
+}
